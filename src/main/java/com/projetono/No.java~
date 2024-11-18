@@ -1,0 +1,44 @@
+package com.projetono;
+
+public class No<T> {
+
+    private T conteudo;
+    private No<T> proximoNo;
+    //variavel to get type
+    private Class<T> type;
+
+    public No(T conteudo, Class<T> type) {
+        this.proximoNo = null;
+        this.conteudo = conteudo;
+        //get the type so I can Print it
+        this.type  = type; // Store the type
+    }
+
+    public T getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(T conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public No<T> getProximoNo() {
+        return proximoNo;
+    }
+
+    public void setProximoNo(No<T> proximoNo) {
+        this.proximoNo = proximoNo;
+    }
+
+    @Override
+    public String toString() {
+        return "No{" +
+                "conteudo='" + conteudo + '\'' +
+                '}';
+    }
+
+    public void printType() {
+        // Printing the type of T
+        System.out.println("The type of T is: " + type.getName());
+    }
+}
